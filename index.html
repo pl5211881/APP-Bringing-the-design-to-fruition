@@ -381,25 +381,17 @@
         const dockHeight = bottomDock.offsetHeight;
         const targetContentHeight = Math.max(contentBottom + dockHeight, phone.clientHeight);
         const normalFlowBeforeSpacer = scrollSpacer.offsetTop;
-        const spacerHeight = Math.max(0, targetContentHeight - normalFlowBeforeSpacer);
+        const spacerHeight = Math.max(0, targetContentHeight - normalFlowBeforeSpacer - dockHeight);
         phone.style.setProperty("--scroll-spacer-height", `${spacerHeight}px`);
-        syncBottomDock();
         requestAnimationFrame(() => {
           const maxScrollTop = Math.max(0, phone.scrollHeight - phone.clientHeight);
           if (phone.scrollTop > maxScrollTop) phone.scrollTop = maxScrollTop;
-          syncBottomDock();
         });
-      }
-
-      function syncBottomDock() {
-        if (!bottomDock) return;
-        phone.style.setProperty("--scroll-dock-top", `${phone.scrollTop + phone.clientHeight - bottomDock.offsetHeight}px`);
       }
 
       function updateStickyNav() {
         const stuck = phone.scrollTop > 24;
         syncPhoneMetrics();
-        syncBottomDock();
         phone.classList.toggle("is-nav-stuck", stuck);
         phone.classList.toggle("is-detail-stuck", phone.dataset.view === "detail" && stuck);
       }

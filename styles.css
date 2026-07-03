@@ -696,10 +696,11 @@ button {
 }
 
 .bottom-dock {
-  position: absolute;
+  position: sticky;
   left: 0;
   right: 0;
-  top: calc(var(--scroll-dock-top, 896px - var(--bottom-dock-height)));
+  top: calc(100% - var(--bottom-dock-height));
+  bottom: 0;
   width: 414px;
   height: var(--bottom-dock-height);
   z-index: 30;
