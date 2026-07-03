@@ -1,0 +1,14 @@
+# Local preview and verification screenshots generated during visual QA.
+preview*.png
+verify*.png
+chart*.png
+design-radar*.png
+figma-radar-reference.png
+radar-*-comparison.png
+radar-align-candidates.png
+radar-position-comparison.png
+
+# System and editor noise.
+.DS_Store
+Thumbs.db
+

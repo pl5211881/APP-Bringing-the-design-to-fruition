@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学习报告</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="preview-shell" aria-label="Figma design implementation">
+      <section class="phone-screen" aria-label="学习报告" data-view="report" data-report-state="idle">
+        <div class="bg-orb bg-orb-a"></div>
+        <div class="bg-orb bg-orb-b"></div>
+        <div class="bg-orb bg-orb-c"></div>
+        <img class="hero-cube" src="./assets/hero-bg-phone.png" alt="" />
+        <img class="hero-mini-cube" src="./assets/hero-small-cube.png" alt="" />
+
+        <header class="ios-nav">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="status-icons" aria-hidden="true">
+              <span class="cellular-bars"><i></i><i></i><i></i><i></i></span>
+              <span class="wifi-mark"><i></i></span>
+              <span class="battery">
+                <span></span>
+              </span>
+            </div>
+          </div>
+          <div class="nav-row">
+            <button class="nav-back" aria-label="返回">
+              <img src="./assets/back-icon.svg" alt="" />
+            </button>
+            <h1 data-page-title>学习报告</h1>
+            <div class="wechat-actions" aria-hidden="true">
+              <img class="more-dot" src="./assets/nav-dot.svg" alt="" />
+              <span></span>
+              <img class="target-dot" src="./assets/nav-more.svg" alt="" />
+            </div>
+          </div>
+        </header>
+
+        <section class="hero-copy" aria-labelledby="weekly-title" data-primary-only>
+          <div class="weekly-title" id="weekly-title">
+            <img class="title-union" src="./assets/title-union.svg" alt="每周学习报告" />
+            <img class="ai-mark-main" src="./assets/logo-ai-main.svg" alt="" />
+            <img class="ai-mark-spark" src="./assets/logo-ai-spark.svg" alt="" />
+          </div>
+          <p>实时检测学习行为和数据</p>
+          <span class="date-chip">本周 6月3日-6月7日</span>
+        </section>
+
+        <section class="summary-card" aria-label="学习概览" data-primary-only>
+          <img class="summary-bg" src="./assets/report-card-bg.svg" alt="" />
+          <div class="sync-pill">
+            <img src="./assets/sync-icon.svg" alt="" />
+            <span>数据持续同步中</span>
+          </div>
+          <div class="student-row">
+            <div class="avatar">
+              <img src="./assets/avatar.png" alt="" />
+            </div>
+            <div>
+              <strong>胡一菲同学</strong>
+              <p>本周共学习 <b>232</b> 分钟</p>
+            </div>
+          </div>
+          <div class="stats">
+            <article>
+              <div><strong>72</strong><em class="metric-unit">分</em><img class="trend-icon" src="./assets/stat-up.svg" alt="" /></div>
+              <span>整体掌握度</span>
+            </article>
+            <article>
+              <div><strong>82</strong><em class="metric-unit">分</em><img class="trend-icon" src="./assets/stat-down.svg" alt="" /></div>
+              <span>平均得分</span>
+            </article>
+            <article>
+              <div><strong>91</strong><em class="metric-unit">%</em><img class="trend-icon" src="./assets/stat-up.svg" alt="" /></div>
+              <span>作业完成率</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="ai-report-card report-state report-state-idle is-active" aria-label="AI 学习报告" data-state-panel="idle">
+          <img class="card-bg" src="./assets/learn-card-bg.svg" alt="" />
+          <div class="card-title">
+            <span class="ai-title-mark" aria-hidden="true">
+              <img class="ai-title-blue" src="./assets/ai-title-blue.svg" alt="" />
+              <img class="ai-title-dot" src="./assets/ai-title-red-dot.svg" alt="" />
+              <img class="ai-title-stem" src="./assets/ai-title-red-stem.svg" alt="" />
+            </span>
+            <span class="card-title-text">学习报告</span>
+          </div>
+          <div class="mascot-wrap">
+            <img src="./assets/mascot.png" alt="" />
+          </div>
+          <h2>分钟级生成复习重点</h2>
+          <p>所使用模型依托于GPT-5.5构建</p>
+          <button class="generate-btn" type="button" data-action="generate">点击生成</button>
+        </section>
+
+        <section class="report-state report-state-generating" aria-label="学习报告生成中" data-state-panel="generating" aria-hidden="true">
+          <div class="generating-border-video" aria-hidden="true">
+            <video src="./assets/generating-border.mov" autoplay muted loop playsinline></video>
+          </div>
+          <div class="generating-video" aria-hidden="true">
+            <video src="./assets/generating-background.webm" autoplay muted loop playsinline></video>
+          </div>
+          <div class="card-title generating-title">
+            <span class="ai-title-mark" aria-hidden="true">
+              <img class="ai-title-blue" src="./assets/ai-title-blue.svg" alt="" />
+              <img class="ai-title-dot" src="./assets/ai-title-red-dot.svg" alt="" />
+              <img class="ai-title-stem" src="./assets/ai-title-red-stem.svg" alt="" />
+            </span>
+            <span class="card-title-text">学习报告生成中...</span>
+          </div>
+          <button class="thought-toggle thought-toggle-up" type="button" data-action="finish">
+            <span>收起思考过程</span>
+            <i class="thought-arrow" aria-hidden="true"></i>
+          </button>
+          <p class="review-summary">已经为您分析您的学习情况，具体报告结果如下</p>
+          <div class="generating-meta">
+            <span class="status-badge">进行中</span>
+            <p>当前已用时 <span class="elapsed-badge" data-elapsed>0</span> 秒（预计1分钟左右）</p>
+          </div>
+          <div class="dash-line" aria-hidden="true"></div>
+          <ol class="thinking-steps">
+            <li class="is-current" data-step-index="0">
+              <span class="step-dot"></span>
+              <video class="step-loading-video" src="./assets/step-loading.webm" autoplay muted loop playsinline></video>
+              <span class="step-line" aria-hidden="true"></span>
+              <strong>第一步：读取测验记录</strong>
+              <p>已读取4次阶段测试，用于判断知识点掌握程度</p>
+            </li>
+            <li data-step-index="1">
+              <span class="step-dot"></span>
+              <video class="step-loading-video" src="./assets/step-loading.webm" autoplay muted loop playsinline></video>
+              <span class="step-line" aria-hidden="true"></span>
+              <strong>第二步：正在分析作业错因｜<b>教育模型识别</b></strong>
+              <p>系统正在深入分析作业中的错误，识别出潜在问题，并选择最合适的教育模型来探究错误的根本原因。请耐心等待，我们正在匹配教材库的题</p>
+            </li>
+            <li data-step-index="2">
+              <span class="step-dot"></span>
+              <video class="step-loading-video" src="./assets/step-loading.webm" autoplay muted loop playsinline></video>
+              <span class="step-line" aria-hidden="true"></span>
+              <strong>第三步：整理答疑问题</strong>
+              <p>正在汇总课堂提问与答疑记录，筛选高频困惑点，并标记需要复盘的知识关联。</p>
+            </li>
+            <li data-step-index="3">
+              <span class="step-dot"></span>
+              <video class="step-loading-video" src="./assets/step-loading.webm" autoplay muted loop playsinline></video>
+              <span class="step-line" aria-hidden="true"></span>
+              <strong>第四步：生成薄弱分层</strong>
+              <p>系统正在对知识点掌握度进行分层，结合测验、作业和答疑数据定位优先提升项。</p>
+            </li>
+            <li data-step-index="4">
+              <span class="step-dot"></span>
+              <video class="step-loading-video" src="./assets/step-loading.webm" autoplay muted loop playsinline></video>
+              <strong>第五步：生成复习路径</strong>
+              <p>正在生成个性化复习路径，按优先级安排练习顺序、复习时长和巩固任务。</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="report-state report-state-done" aria-label="学习报告已生成" data-state-panel="done" aria-hidden="true">
+          <div class="done-head">
+            <div class="card-title done-title">
+              <span class="ai-title-mark" aria-hidden="true">
+                <img class="ai-title-blue" src="./assets/ai-title-blue.svg" alt="" />
+                <img class="ai-title-dot" src="./assets/ai-title-red-dot.svg" alt="" />
+                <img class="ai-title-stem" src="./assets/ai-title-red-stem.svg" alt="" />
+              </span>
+              <span class="card-title-text">学习报告已生成</span>
+            </div>
+            <button class="thought-toggle" type="button" data-action="review-thinking">
+              <span>展开思考过程</span>
+              <i class="thought-arrow" aria-hidden="true"></i>
+            </button>
+            <p>已经为您分析您的学习情况，具体报告结果如下</p>
+            <div class="done-thinking-panel" aria-hidden="true">
+              <ol class="done-thinking-steps">
+                <li><span></span><strong>第一步：读取测验记录</strong><p>已读取4次阶段测试，用于判断知识点掌握程度</p></li>
+                <li><span></span><strong>第二步：正在分析作业错因｜教育模型识别</strong><p>已识别作业错因，并匹配教材库中的关键题型。</p></li>
+                <li><span></span><strong>第三步：整理答疑问题</strong><p>已汇总课堂提问与答疑记录，筛选出高频困惑点。</p></li>
+                <li><span></span><strong>第四步：生成薄弱分层</strong><p>已定位优先提升项，完成知识点掌握度分层。</p></li>
+                <li><span></span><strong>第五步：生成复习路径</strong><p>已生成个性化复习路径、练习顺序与巩固任务。</p></li>
+              </ol>
+            </div>
+          </div>
+          <article class="result-card">
+            <div class="result-title">
+              <small>XUEXIBAOGAO</small>
+              <h2>优秀生</h2>
+            </div>
+            <div class="result-metrics">
+              <span>班级排名 <b>18</b> 位</span>
+              <span>测评总分 <b>75</b> 分</span>
+            </div>
+            <div class="radar-widget" aria-hidden="true">
+              <img class="radar-base" src="./assets/radar-base.png" alt="" />
+              <img class="radar-highlight" src="./assets/radar-highlight.png" alt="" />
+              <img class="radar-union" src="./assets/radar-union.png" alt="" />
+            </div>
+            <div class="result-summary">
+              <strong>总体结论</strong>
+              <button type="button" data-action="detail-source">数据来源</button>
+              <p>你在树与图章节的表现非常出色，为了进一步提升你的能力，建议你优先攻克时间复杂度分析和图...</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="detail-page" aria-label="学习质量检测结果" data-detail-page aria-hidden="true">
+          <div class="detail-hero">
+            <small>XUEXIBAOGAO</small>
+            <h2>优秀生</h2>
+            <dl>
+              <div><dt>测评总分</dt><dd><b>75</b> 分</dd></div>
+              <div><dt>作业完成率</dt><dd><b>91</b> %</dd></div>
+              <div><dt>班级排名</dt><dd><b>18</b> 位</dd></div>
+              <div><dt>进步幅度</dt><dd><b>8</b> %</dd></div>
+            </dl>
+            <div class="radar-widget detail-radar" aria-hidden="true">
+              <img class="detail-radar-full" src="./assets/detail-radar-full.png" alt="" />
+            </div>
+            <div class="detail-conclusion">
+              <strong>总体结论</strong>
+              <button type="button">数据来源</button>
+              <p>你在树与图章节的表现非常出色，为了进一步提升你的能力，建议你优先攻克时间复杂度分析和图的遍历算法，掌握这些内容将帮助你在后续的学习中更加游刃有余。</p>
+            </div>
+          </div>
+
+          <article class="analysis-card weak-card">
+            <div class="section-heading">
+              <span class="heading-icon orange"></span>
+              <h3>薄弱知识点分析</h3>
+              <button type="button">查看</button>
+            </div>
+            <div class="weak-item high">
+              <div class="percent-ring percent-ring-high" style="--target: 19">
+                <svg viewBox="0 0 44 44" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ringGradientHigh" x1="4" y1="22" x2="40" y2="22" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#f64646"></stop>
+                      <stop offset="1" stop-color="#ff8c2e"></stop>
+                    </linearGradient>
+                  </defs>
+                  <circle class="ring-track" cx="22" cy="22" r="18"></circle>
+                  <circle class="ring-progress" cx="22" cy="22" r="18"></circle>
+                </svg>
+                <b>0%</b>
+              </div>
+              <div>
+                <strong>时间复杂度分析 <em>高优先</em></strong>
+                <span>算法分析-掌握度</span>
+              </div>
+              <button type="button">去练习</button>
+            </div>
+            <ul class="weak-notes">
+              <li>4 次测验中相关题型连续失分，会影响后续排序、图算法题判断。</li>
+              <li>先做5道基础判断题，再看1个递归拆解例题。</li>
+            </ul>
+            <div class="weak-item medium">
+              <div class="percent-ring percent-ring-medium" style="--target: 45">
+                <svg viewBox="0 0 44 44" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ringGradientMedium" x1="4" y1="22" x2="40" y2="22" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#ff8c2e"></stop>
+                      <stop offset="1" stop-color="#ffb710"></stop>
+                    </linearGradient>
+                  </defs>
+                  <circle class="ring-track" cx="22" cy="22" r="18"></circle>
+                  <circle class="ring-progress" cx="22" cy="22" r="18"></circle>
+                </svg>
+                <b>0%</b>
+              </div>
+              <div>
+                <strong>图最短路径 <em>中优先</em></strong>
+                <span>图结构-掌握度</span>
+              </div>
+              <button type="button">去练习</button>
+            </div>
+            <div class="weak-item low">
+              <div class="percent-ring percent-ring-low" style="--target: 72">
+                <svg viewBox="0 0 44 44" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ringGradientLow" x1="4" y1="22" x2="40" y2="22" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#00bcbc"></stop>
+                      <stop offset="1" stop-color="#00d3ea"></stop>
+                    </linearGradient>
+                  </defs>
+                  <circle class="ring-track" cx="22" cy="22" r="18"></circle>
+                  <circle class="ring-progress" cx="22" cy="22" r="18"></circle>
+                </svg>
+                <b>0%</b>
+              </div>
+              <div>
+                <strong>递归算法 <em>低优先</em></strong>
+                <span>递归思想-掌握度</span>
+              </div>
+              <button type="button">去练习</button>
+            </div>
+          </article>
+
+          <article class="analysis-card path-card">
+            <div class="section-heading">
+              <span class="heading-icon blue"></span>
+              <h3>优先复习路径</h3>
+              <button type="button">查看</button>
+            </div>
+            <div class="path-item">
+              <span class="path-icon path-icon-1" aria-hidden="true"></span>
+              <div><strong>补时间复杂判断</strong><p>先解决最低掌握度知识点，减少后续算法题读题成本。</p><small>优先复习 20min</small></div>
+              <button type="button">去查看</button>
+            </div>
+            <div class="path-item">
+              <span class="path-icon path-icon-2" aria-hidden="true"></span>
+              <div><strong>练图最短路径选择</strong><p>多次最短路径选择出错，说明理解还停留在代码层。</p><small>高频练习 25min</small></div>
+              <button type="button">去开始</button>
+            </div>
+            <div class="path-item">
+              <span class="path-icon path-icon-3" aria-hidden="true"></span>
+              <div><strong>做递归、树遍历综合巩固</strong><p>基础掌握接近及格线，但综合题里容易和递归混淆。</p><small>巩固练习 10min</small></div>
+              <button type="button">去开始</button>
+            </div>
+          </article>
+
+          <p class="privacy-copy">我们将严格保护您的隐私安全，详见 <a href="#">《隐私协议》</a></p>
+        </section>
+
+        <div class="scroll-spacer" aria-hidden="true"></div>
+        <div class="bottom-dock" aria-hidden="false">
+          <button class="result-cta" type="button" data-action="open-detail">查看检测结果</button>
+          <button class="detail-cta" type="button">开始优先复习</button>
+          <div class="home-indicator" aria-hidden="true"></div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const phone = document.querySelector(".phone-screen");
+      const panels = [...document.querySelectorAll("[data-state-panel]")];
+      const detailPage = document.querySelector("[data-detail-page]");
+      const title = document.querySelector("[data-page-title]");
+      const elapsed = document.querySelector("[data-elapsed]");
+      const generatingPanel = document.querySelector('[data-state-panel="generating"]');
+      const generatingTitleText = generatingPanel.querySelector(".card-title-text");
+      const donePanel = document.querySelector('[data-state-panel="done"]');
+      const doneThinkingPanel = document.querySelector(".done-thinking-panel");
+      const doneThoughtToggleText = donePanel.querySelector(".thought-toggle span");
+      const scrollSpacer = document.querySelector(".scroll-spacer");
+      const bottomDock = document.querySelector(".bottom-dock");
+      const thinkingSteps = [...document.querySelectorAll(".thinking-steps li")];
+      const percentRings = [...document.querySelectorAll(".percent-ring")];
+      let generateTimer;
+      let tickTimer;
+      let stepTimer;
+      let ringAnimationFrame;
+      let ringDelayTimer;
+      let elapsedSeconds = 0;
+      let currentStep = 0;
+      const stepDuration = 3000;
+      const ringCircumference = 2 * Math.PI * 18;
+
+      function syncPhoneMetrics() {
+        const viewportPadding = window.innerWidth >= 600 ? 48 : 0;
+        const scale = window.innerWidth >= 600
+          ? Math.min((window.innerWidth - viewportPadding) / 414, (window.innerHeight - viewportPadding) / 896)
+          : window.innerWidth / 414;
+        const rect = phone.getBoundingClientRect();
+        document.documentElement.style.setProperty("--phone-scale", `${scale}`);
+        document.documentElement.style.setProperty("--phone-left", `${rect.left}px`);
+        document.documentElement.style.setProperty("--phone-width", `${rect.width}px`);
+        syncContentBottomSpace();
+      }
+
+      function syncContentBottomSpace() {
+        const activeContent = phone.dataset.view === "detail"
+          ? detailPage
+          : document.querySelector("[data-state-panel].is-active");
+        if (!activeContent || !bottomDock) return;
+
+        const contentBottom = activeContent.offsetTop + activeContent.offsetHeight;
+        const dockHeight = bottomDock.offsetHeight;
+        const targetContentHeight = Math.max(contentBottom + dockHeight, phone.clientHeight);
+        const normalFlowBeforeSpacer = scrollSpacer.offsetTop;
+        const spacerHeight = Math.max(0, targetContentHeight - normalFlowBeforeSpacer);
+        phone.style.setProperty("--scroll-spacer-height", `${spacerHeight}px`);
+        syncBottomDock();
+        requestAnimationFrame(() => {
+          const maxScrollTop = Math.max(0, phone.scrollHeight - phone.clientHeight);
+          if (phone.scrollTop > maxScrollTop) phone.scrollTop = maxScrollTop;
+          syncBottomDock();
+        });
+      }
+
+      function syncBottomDock() {
+        if (!bottomDock) return;
+        phone.style.setProperty("--scroll-dock-top", `${phone.scrollTop + phone.clientHeight - bottomDock.offsetHeight}px`);
+      }
+
+      function updateStickyNav() {
+        const stuck = phone.scrollTop > 24;
+        syncPhoneMetrics();
+        syncBottomDock();
+        phone.classList.toggle("is-nav-stuck", stuck);
+        phone.classList.toggle("is-detail-stuck", phone.dataset.view === "detail" && stuck);
+      }
+
+      function showReportState(state) {
+        phone.dataset.view = "report";
+        phone.dataset.reportState = state;
+        phone.classList.remove("is-detail-stuck");
+        phone.classList.remove("is-nav-stuck");
+        resetPercentRings();
+        donePanel.classList.remove("is-thinking-open");
+        doneThinkingPanel?.setAttribute("aria-hidden", "true");
+        if (doneThoughtToggleText) doneThoughtToggleText.textContent = "展开思考过程";
+        title.textContent = "学习报告";
+        detailPage.setAttribute("aria-hidden", "true");
+        panels.forEach((panel) => {
+          const active = panel.dataset.statePanel === state;
+          panel.classList.toggle("is-active", active);
+          panel.setAttribute("aria-hidden", String(!active));
+        });
+        requestAnimationFrame(syncPhoneMetrics);
+      }
+
+      function startGenerating() {
+        clearTimeout(generateTimer);
+        clearInterval(tickTimer);
+        clearInterval(stepTimer);
+        elapsedSeconds = 0;
+        currentStep = 0;
+        elapsed.textContent = elapsedSeconds;
+        generatingTitleText.textContent = "学习报告生成中...";
+        generatingPanel.classList.remove("is-review-mode");
+        showReportState("generating");
+        renderThinkingSteps();
+        tickTimer = setInterval(() => {
+          elapsedSeconds += 1;
+          elapsed.textContent = elapsedSeconds;
+        }, 1000);
+        stepTimer = setInterval(advanceThinkingStep, stepDuration);
+      }
+
+      function renderThinkingSteps(forceComplete = false) {
+        thinkingSteps.forEach((step, index) => {
+          const done = forceComplete || index < currentStep;
+          const current = !forceComplete && index === currentStep;
+          step.classList.toggle("is-done", done);
+          step.classList.toggle("is-current", current);
+          step.classList.toggle("is-pending", !done && !current);
+        });
+        requestAnimationFrame(() => {
+          syncStepMasks();
+          syncStepLines();
+          syncPhoneMetrics();
+        });
+      }
+
+      function syncStepMasks() {
+        thinkingSteps.forEach((step) => {
+          const paragraph = step.querySelector("p");
+          if (!paragraph || !step.classList.contains("is-current")) {
+            step.classList.remove("has-overflow-mask");
+            return;
+          }
+
+          const lineHeight = Number.parseFloat(getComputedStyle(paragraph).lineHeight);
+          const originalText = paragraph.dataset.fullText || paragraph.textContent;
+          paragraph.dataset.fullText = originalText;
+          paragraph.textContent = originalText;
+
+          const contentStyle = getComputedStyle(paragraph);
+          const verticalPadding = Number.parseFloat(contentStyle.paddingTop) + Number.parseFloat(contentStyle.paddingBottom);
+          const threeLineHeight = Math.round(lineHeight * 3 + verticalPadding);
+          const textLines = Math.ceil((paragraph.scrollHeight - verticalPadding) / lineHeight);
+          const needsEllipsis = textLines >= 3;
+
+          if (needsEllipsis) {
+            let start = 0;
+            let end = originalText.length;
+            let best = originalText;
+
+            while (start <= end) {
+              const mid = Math.floor((start + end) / 2);
+              paragraph.textContent = `${originalText.slice(0, mid).trimEnd()}...`;
+              if (paragraph.scrollHeight <= threeLineHeight) {
+                best = paragraph.textContent;
+                start = mid + 1;
+              } else {
+                end = mid - 1;
+              }
+            }
+
+            paragraph.textContent = best;
+          }
+
+          step.classList.toggle("has-overflow-mask", needsEllipsis);
+        });
+      }
+
+      function syncStepLines() {
+        thinkingSteps.forEach((step, index) => {
+          const line = step.querySelector(".step-line");
+          const nextStep = thinkingSteps[index + 1];
+          if (!line || !nextStep) return;
+
+          const stepRect = step.getBoundingClientRect();
+          const nextRect = nextStep.getBoundingClientRect();
+          const lineTop = stepRect.top + 16;
+          const nextIconTop = nextRect.top;
+          line.style.setProperty("--step-line-height", `${Math.max(17, nextIconTop - lineTop)}px`);
+        });
+      }
+
+      function advanceThinkingStep() {
+        if (currentStep < thinkingSteps.length - 1) {
+          currentStep += 1;
+          renderThinkingSteps();
+          return;
+        }
+
+        clearInterval(stepTimer);
+        clearInterval(tickTimer);
+        renderThinkingSteps(true);
+        generateTimer = setTimeout(() => {
+          showReportState("done");
+        }, 900);
+      }
+
+      function completeThinkingThenShowDone() {
+        clearTimeout(generateTimer);
+        clearInterval(stepTimer);
+        clearInterval(tickTimer);
+        renderThinkingSteps(true);
+        generateTimer = setTimeout(() => {
+          showReportState("done");
+        }, 900);
+      }
+
+      function showCompletedThinking() {
+        clearTimeout(generateTimer);
+        clearInterval(stepTimer);
+        clearInterval(tickTimer);
+        const nextOpen = !donePanel.classList.contains("is-thinking-open");
+        donePanel.classList.toggle("is-thinking-open", nextOpen);
+        doneThinkingPanel?.setAttribute("aria-hidden", String(!nextOpen));
+        if (doneThoughtToggleText) doneThoughtToggleText.textContent = nextOpen ? "收起思考过程" : "展开思考过程";
+        requestAnimationFrame(syncPhoneMetrics);
+      }
+
+      function openDetail() {
+        clearTimeout(generateTimer);
+        clearInterval(tickTimer);
+        clearInterval(stepTimer);
+        phone.dataset.view = "detail";
+        phone.dataset.reportState = "done";
+        title.textContent = "学习质量检测结果";
+        panels.forEach((panel) => {
+          panel.classList.remove("is-active");
+          panel.setAttribute("aria-hidden", "true");
+        });
+        detailPage.removeAttribute("aria-hidden");
+        phone.classList.remove("is-detail-stuck");
+        phone.classList.remove("is-nav-stuck");
+        phone.scrollTo({ top: 0, behavior: "smooth" });
+        requestAnimationFrame(syncPhoneMetrics);
+        animatePercentRings();
+      }
+
+      function resetPercentRings() {
+        clearTimeout(ringDelayTimer);
+        cancelAnimationFrame(ringAnimationFrame);
+        percentRings.forEach((ring) => {
+          ring.style.setProperty("--ring-offset", ringCircumference);
+          const label = ring.querySelector("b");
+          if (label) label.textContent = "0%";
+        });
+      }
+
+      function animatePercentRings() {
+        resetPercentRings();
+        ringDelayTimer = setTimeout(() => {
+        const duration = 1800;
+        const startTime = performance.now();
+        const easeOut = (value) => 1 - Math.pow(1 - value, 2.4);
+
+        function tick(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = easeOut(progress);
+          percentRings.forEach((ring) => {
+            const target = Number.parseFloat(ring.style.getPropertyValue("--target")) || 0;
+            const value = Math.round(target * eased);
+            const offset = ringCircumference * (1 - (target * eased) / 100);
+            ring.style.setProperty("--ring-offset", offset.toFixed(3));
+            const label = ring.querySelector("b");
+            if (label) label.textContent = `${value}%`;
+          });
+          if (progress < 1) ringAnimationFrame = requestAnimationFrame(tick);
+        }
+
+        ringAnimationFrame = requestAnimationFrame(tick);
+        }, 3000);
+      }
+
+      function setPercentRingsToTarget() {
+        clearTimeout(ringDelayTimer);
+        cancelAnimationFrame(ringAnimationFrame);
+        percentRings.forEach((ring) => {
+          const target = Number.parseFloat(ring.style.getPropertyValue("--target")) || 0;
+          const offset = ringCircumference * (1 - target / 100);
+          ring.style.setProperty("--ring-offset", offset.toFixed(3));
+          const label = ring.querySelector("b");
+          if (label) label.textContent = `${target}%`;
+        });
+      }
+
+      setPercentRingsToTarget();
+      syncPhoneMetrics();
+      window.addEventListener("resize", syncPhoneMetrics);
+      window.addEventListener("orientationchange", syncPhoneMetrics);
+
+      phone.addEventListener("scroll", () => {
+        updateStickyNav();
+      });
+
+      document.addEventListener("click", (event) => {
+        const action = event.target.closest("[data-action]")?.dataset.action;
+        if (!action) return;
+        if (action === "generate") startGenerating();
+        if (action === "finish") {
+          completeThinkingThenShowDone();
+        }
+        if (action === "review-thinking") showCompletedThinking();
+        if (action === "open-detail") openDetail();
+      });
+
+      document.querySelector(".nav-back").addEventListener("click", () => {
+        if (phone.dataset.view === "detail") {
+          showReportState("done");
+        }
+      });
+    </script>
+  </body>
+</html>
