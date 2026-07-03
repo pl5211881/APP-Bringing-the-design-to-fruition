@@ -2,6 +2,10 @@
 
 这是一个静态前端原型，用于还原「AI 学习报告」一级页与二级页流程。当前入口为 `index.html`，样式在 `styles.css`，图片和视频资源在 `assets/`。
 
+## 在线预览
+
+[点击查看 GitHub Pages 预览](https://pl5211881.github.io/APP-Bringing-the-design-to-fruition/)
+
 ## 本地运行
 
 ```bash
